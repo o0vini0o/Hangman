@@ -6,10 +6,13 @@
 
 html,
 body {
-  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f4f4;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
+
 .footer {
   padding: 1rem;
   text-align: center;
@@ -19,7 +22,12 @@ body {
   font-size: large;
 }
 .header {
-  height: 60px;
+  background: #222;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
 }
 .header h1 {
   padding: 4px;
@@ -49,29 +57,48 @@ body {
   transition: background-color 0.3s, transform 0.2s;
   cursor: default;
 }
+
+#selected-theme {
+  padding: 1rem;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 .container_question_buttons {
   display: flex;
   gap: 3rem;
-  justify-content: end;
-  padding-right: 3rem;
-  margin-bottom: 5rem;
 }
 
 .container_question_button {
-  background-color: brown;
-  color: antiquewhite;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background: #444;
+  color: #fff;
   border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
 }
 
 .container_question_button:hover {
-  background-color: antiquewhite;
+  background: antiquewhite;
   color: brown;
-  border: 1px solid brown;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
+
+.container_question_button.active {
+  background: #f3d611;
+  color: #222;
+  font-weight: bold;
+  cursor: default;
+}
+
 .tastatur {
   background-color: #70cdd4;
   width: 100%;
@@ -110,6 +137,19 @@ body {
   cursor: default;
 }
 
+.key.correct {
+  background-color: #4caf50;
+  color: white;
+  cursor: default;
+  border: 2px solid darkgreen;
+}
+
+.key.wrong {
+  background-color: #f44336;
+  color: white;
+  opacity: 0.6;
+  cursor: default;
+}
 @media screen and (max-width: 520px) {
   .keyboard {
     padding: 1rem;

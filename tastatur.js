@@ -41,6 +41,8 @@ export const createTastatur = () => {
     btn.textContent =
       index === tastatur.length - 1 ? letter : letter.toUpperCase();
     btn.classList.add("key");
+    btn.classList.add("unactive");
+    btn.disabled = true;
     tastEl.appendChild(btn);
   });
 
@@ -53,7 +55,6 @@ export const createTastatur = () => {
     if (index >= 24) {
       key.style.gridColumnStart = index - 22;
     }
-    console.log(answerC);
 
     /*themaBtn.addEventListener("click", () => {
     const themaWords = themen.find((th) => th.name === thema).words;
@@ -73,13 +74,50 @@ export const createTastatur = () => {
 
     key.addEventListener("click", () => {
       key.classList.add("pressed");
+      console.log(window.word);
+      if (!window.word) return;
+
+      const answerChars = [...window.word.toUpperCase()];
+      const slots = document.querySelectorAll(".letter-card");
+      let count = 0;
+
+      let found = false;
+      const keyPressed = key.textContent;
+
+      answerChars.forEach((char, index) => {
+        if (char === keyPressed) {
+          slots[index].textContent = char;
+          found = true;
+        }
+      });
+
+      if (!found) {
+        window.tryCount++;
+        key.classList.add("wrong");
+      } else {
+        key.classList.add("correct");
+      }
 
       setTimeout(() => {
         key.classList.remove("pressed");
       }, 100);
 
-      key.classList.add("unactive");
+      //key.classList.add("unactive");
       key.disabled = true;
+
+      slots.forEach((slot) => {
+        if (slot.textContent !== "") count++;
+      });
+
+      if (count === slots.length) {
+        alert("Bravo ! Tu as trouvé le mot 🎉");
+        document.querySelectorAll(".key").forEach((k) => {
+          if (!k.classList.contains("correct")) {
+            k.disabled = true;
+            k.classList.add("unactive");
+          }
+        });
+      }
     });
   });
 };
