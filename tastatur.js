@@ -110,7 +110,7 @@ export const createTastatur = () => {
       });
 
       if (count === slots.length) {
-        alert("Bravo ! Tu as trouvé le mot 🎉");
+        alert("Gluckwunssch 🎉");
         document.querySelectorAll(".key").forEach((k) => {
           if (!k.classList.contains("correct")) {
             k.disabled = true;
