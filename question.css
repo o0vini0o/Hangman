@@ -1,18 +1,23 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  max-height: auto;
-  line-height: 1.5;
-}
-
 #container_question_buttons {
   display: flex;
   gap: 3rem;
   justify-content: end;
   padding-right: 3rem;
+  margin-bottom: 5rem;
+}
+
+#container_question_buttons div {
+  background-color: brown;
+  color: antiquewhite;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 5px;
+}
+
+#container_question_buttons div:hover {
+  background-color: antiquewhite;
+  color: brown;
+  border: 1px solid brown;
 }
