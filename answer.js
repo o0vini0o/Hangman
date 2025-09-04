@@ -1,3 +1,6 @@
+import { getNewAnimal } from "./questions.js";
+const question = getNewAnimal();
+
 const answer = () => {
   const answerContainer = document.getElementById("answer-container");
   const question = "Pferd";

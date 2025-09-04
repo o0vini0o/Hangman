@@ -1,4 +1,4 @@
-#container_question_buttons {
+.container_question_buttons {
   display: flex;
   gap: 3rem;
   justify-content: end;
@@ -6,7 +6,7 @@
   margin-bottom: 5rem;
 }
 
-#container_question_buttons div {
+.container_question_button {
   background-color: brown;
   color: antiquewhite;
   padding-left: 2rem;
@@ -16,7 +16,7 @@
   border-radius: 5px;
 }
 
-#container_question_buttons div:hover {
+.container_question_button:hover {
   background-color: antiquewhite;
   color: brown;
   border: 1px solid brown;
