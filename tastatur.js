@@ -1,37 +1,5 @@
+import { tastatur } from "./components/tastatur.js";
 export const createTastatur = () => {
-  const tastatur = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-    "ä",
-    "Ö",
-    "ü",
-    "ß",
-  ];
-
   const myTastatur = document.getElementById("my-tastatur");
   const tastEl = document.createElement("article");
   tastEl.classList.add("keyboard");
