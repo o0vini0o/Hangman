@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hangman</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body>
+    <header class="header">
+      <h1>Galgenmann</h1>
+      <nav class="container_question_buttons"></nav>
+    </header>
 
-<body>
-  <header class="header">
-    <h1>Galgenmann</h1>
-    <nav class="container_question_buttons"></nav>
-  </header>
+    <main class="container">
+      <section id="selected-theme">
+        Bitte wähle ein Thema aus, um das Spiel zu starten!
+      </section>
+      <section class="spiel-container">
+        <div class="hangman-img">
+          <img id="hangman" src="img/hangman-1.png" alt="hangman-img" />
+        </div>
+        <div class="hangman-container">
+          <div id="answer-container" class="answer-container"></div>
+          <div id="my-tastatur" class="tastatur"></div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer">©Created by Thomas, Frank, Boris und Yan</div>
+    </footer>
 
-  <main class="container">
-    <section id="selected-theme">
-      Bitte wähle ein Thema aus, um das Spiel zu starten!
-    </section>
-    <img id="hangman" src="img/hangman-1.png" alt="hangman-img" width="300" />
-    <section id="answer-container" class="answer-container"></section>
-    <section id="my-tastatur" class="tastatur"></section>
-  </main>
-  <footer>
-    <div class="footer">©Created by Thomas, Frank, Boris und Yan</div>
-  </footer>
-
-  <script src="script.js" type="module"></script>
-</body>
-
+    <script src="script.js" type="module"></script>
+  </body>
 </html>
