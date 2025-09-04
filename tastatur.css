@@ -1,0 +1,37 @@
+.tastatur {
+  background-color: #70cdd4;
+  width: 100%;
+}
+
+.keyboard {
+  display: grid;
+  padding: 4rem;
+  margin: 0 auto;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.key {
+  background-color: #f3d611;
+  border: 2px solid #fe5001;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: auto;
+}
+
+.key.pressed {
+  background-color: #d4b500;
+  transform: scale(0.95);
+  transition: transform 0.1s, background-color 0.1s;
+}
+
+@media screen and (max-width: 520px) {
+  .keyboard {
+    padding: 1rem;
+  }
+}
