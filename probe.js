@@ -20,7 +20,7 @@ export const createTastatur = () => {
   const keys = document.querySelectorAll(".key");
 
   const img = document.getElementById("hangman");
-  const slots = document.querySelectorAll(".letter-card");
+
   let tryCount = 1;
   keys.forEach((key, index) => {
     if (index >= 24) {
@@ -33,18 +33,26 @@ export const createTastatur = () => {
       if (!window.word) return;
       const wordToFind = window.word.toUpperCase();
       const letterPressed = key.textContent;
-
+      const slots = document.querySelectorAll(".letter-card");
       if (wordToFind.includes(letterPressed)) {
         // find letter in word
         key.classList.add("correct");
 
         // render letter card in answer card
-
         [...wordToFind].forEach((char, index) => {
           if (char === letterPressed) {
-            slots[index].textContent = char;
+            slots[index].textContent = letterPressed;
           }
         });
+        // check if all slots filled, is win
+        const win = [...slots].every((slot) => slot.textContent !== "");
+        if (win) {
+          setTimeout(() => {
+            alert("Glückwunssch! Sie haben gewonnen! 🎉🎉🎉");
+            disableAllKeys();
+          }, 100);
+          tryCount = 0;
+        }
       } else {
         // don't find letter in word
         key.classList.add("wrong");
@@ -55,7 +63,7 @@ export const createTastatur = () => {
         } else {
           img.src = imagesHangman[tryCount];
           setTimeout(() => {
-            alert("You lost!");
+            alert("Schade, Sie haben verloren!");
             disableAllKeys();
           }, 100);
           tryCount = 0;
