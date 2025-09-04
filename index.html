@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hangman</title>
-    <link rel="stylesheet" href="tastatur.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="question.css" />
-  </head>
 
-  <body>
-    <header class="header">
-      <h1>Galgenmann</h1>
-    </header>
-    <main class="container">
-      <section>
-        <nav>
-          <div id="container_question_buttons">
-            <div id="container_button_animal" onclick="getNewAnimal()">
-              Animal
-            </div>
-            <div id="container_button_cars">Cars</div>
-            <div id="container_button_city">Cities</div>
-          </div>
-        </nav>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hangman</title>
+  <link rel="stylesheet" href="style.css" />
 
-      <section id="my-tastatur" class="tastatur"></section>
-    </main>
-    <footer>
-      <div class="footer">©Created by Thomas, Frank, Boris und Yan</div>
-    </footer>
-    <script src="questions.js"></script>
-    <script src="tastatur.js" defer></script>
-    <script src="script.js" type="module"></script>
-  </body>
+</head>
+
+<body>
+  <header class="header">
+    <h1>Galgenmann</h1>
+  </header>
+  <main class="container">
+    <section>
+      <nav>
+
+      </nav>
+    </section>
+    <section id="answer-container" class="answer-container">
+    </section>
+    <section id="my-tastatur" class="tastatur"></section>
+  </main>
+  <footer>
+    <div class="footer">©Created by Thomas, Frank, Boris und Yan</div>
+  </footer>
+
+  <script src="script.js" type="module"></script>
+</body>
+
 </html>
