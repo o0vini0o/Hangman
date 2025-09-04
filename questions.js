@@ -14,5 +14,5 @@ let actualQuestion = "";
 function getNewAnimal() {
   const numQuestion = Math.floor(Math.random() * arrAnimals.length);
   actualQuestion = arrAnimals[Math.floor(Math.random() * arrAnimals.length)];
-  alert(actualQuestion);
+  //  alert(actualQuestion);
 }
