@@ -30,6 +30,12 @@
   transition: transform 0.1s, background-color 0.1s;
 }
 
+.key.unactive {
+  background-color: #ffffff;
+  opacity: 0.6;
+  cursor: default;
+}
+
 @media screen and (max-width: 520px) {
   .keyboard {
     padding: 1rem;

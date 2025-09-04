@@ -57,5 +57,8 @@ keys.forEach((key, index) => {
     setTimeout(() => {
       key.classList.remove("pressed");
     }, 100);
+
+    key.classList.add("unactive");
+    key.disabled = true;
   });
 });
