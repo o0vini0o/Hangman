@@ -1,6 +1,8 @@
 import { createTastatur } from "./tastatur.js";
+import { builtHangman } from "./hangman.js";
 
 createTastatur();
+builtHangman();
 /* Our questions are in arrays */
 /* for each type one array for easier handling */
 
