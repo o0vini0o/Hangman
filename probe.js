@@ -21,7 +21,6 @@ export const createTastatur = () => {
 
   const img = document.getElementById("hangman");
 
-  let tryCount = 1;
   keys.forEach((key, index) => {
     if (index >= 24) {
       key.style.gridColumnStart = index - 22;
@@ -51,24 +50,26 @@ export const createTastatur = () => {
             alert("Glückwunssch! Sie haben gewonnen! 🎉🎉🎉");
             disableAllKeys();
           }, 100);
-          tryCount = 0;
+          window.tryCount = 0;
         }
       } else {
         // don't find letter in word
         key.classList.add("wrong");
         // render hangman image
-        if (tryCount < imagesHangman.length - 1) {
-          img.src = imagesHangman[tryCount];
-          tryCount++;
-        } else {
-          img.src = imagesHangman[tryCount];
-          setTimeout(() => {
-            alert("Schade, Sie haben verloren!");
-            disableAllKeys();
-          }, 100);
-          tryCount = 0;
+        if (window.tryCount < imagesHangman.length - 1) {
+          window.tryCount++;
+          img.src = imagesHangman[window.tryCount];
+          // check lost
+          if (window.tryCount === imagesHangman.length - 1) {
+            setTimeout(() => {
+              alert("Schade, Sie haben verloren!");
+              disableAllKeys();
+            }, 100);
+            window.tryCount = 0;
+          }
         }
       }
+      key.disabled = true;
     });
   });
   const disableAllKeys = () => {

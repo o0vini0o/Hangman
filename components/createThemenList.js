@@ -1,3 +1,4 @@
+import { imagesHangman } from "./imagesHangman.js";
 import { themen } from "./themen.js";
 export const createThemenList = () => {
   /* Our questions are in arrays */
@@ -8,20 +9,24 @@ export const createThemenList = () => {
 
   themeList.forEach((thema) => {
     const themaBtn = document.createElement("div");
+    const img = document.getElementById("hangman");
     themaBtn.textContent = thema;
     themaBtn.classList.add("container_question_button");
 
     themaBtn.addEventListener("click", (e) => {
-      const allTastatur = document.querySelectorAll(".key");
+      const keys = document.querySelectorAll(".key");
       document.querySelectorAll(".container_question_button").forEach((btn) => {
         btn.classList.remove("active");
         btn.disabled = false;
       });
 
-      allTastatur.forEach((keyBtn) => {
+      keys.forEach((keyBtn) => {
         keyBtn.classList = ["key"];
         keyBtn.disabled = false;
       });
+      window.tryCount = 0;
+
+      img.src = imagesHangman[window.tryCount];
 
       themaBtn.classList.add("active");
       themaBtn.disabled = true;
