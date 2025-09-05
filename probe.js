@@ -1,5 +1,6 @@
 import { imagesHangman } from "./components/imagesHangman.js";
 import { tastatur } from "./components/tastatur.js";
+import { createResult } from "./components/createResult.js";
 export const createTastatur = () => {
   const myTastatur = document.getElementById("my-tastatur");
   const tastEl = document.createElement("article");
@@ -46,13 +47,22 @@ export const createTastatur = () => {
         // check if all slots filled, is win
         const win = [...slots].every((slot) => slot.textContent !== "");
         if (win) {
-          setTimeout(() => {
-            slots.forEach((card) => {
+
+  slots.forEach((card) => {
               card.classList.add("gewinnen");
             });
-            alert("Glückwunssch! Sie haben gewonnen! 🎉🎉🎉");
-            disableAllKeys();
-          }, 100);
+          document
+            .querySelector(".hangman-container")
+            .insertBefore(
+              createResult(win, "Glückwunssch! Sie haben gewonnen! 🎉🎉🎉"),
+              document.getElementById("my-tastatur")
+            );
+          disableAllKeys();
+          // setTimeout(() => {
+          //   alert("Glückwunssch! Sie haben gewonnen! 🎉🎉🎉");
+          //   disableAllKeys();
+          // }, 100);
+
           window.tryCount = 0;
         }
       } else {
@@ -64,10 +74,17 @@ export const createTastatur = () => {
           img.src = imagesHangman[window.tryCount];
           // check lost
           if (window.tryCount === imagesHangman.length - 1) {
-            setTimeout(() => {
-              alert("Schade, Sie haben verloren!");
-              disableAllKeys();
-            }, 100);
+            document
+              .querySelector(".hangman-container")
+              .insertBefore(
+                createResult(false, "Schade, Sie haben verloren! 👽👽👽"),
+                document.getElementById("my-tastatur")
+              );
+            disableAllKeys();
+            // setTimeout(() => {
+            //   alert("Schade, Sie haben verloren!");
+            //   disableAllKeys();
+            // }, 100);
             window.tryCount = 0;
           }
         }

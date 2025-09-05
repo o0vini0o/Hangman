@@ -14,12 +14,12 @@ body {
 }
 
 .footer {
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: center;
   background-color: #222;
   color: aqua;
   font-weight: 800;
-  font-size: large;
+  font-size: small;
 }
 .header {
   background: #222;
@@ -249,4 +249,40 @@ body {
   .container_question_button {
     font-size: 0.8rem;
   }
+}
+.result-container.win {
+  max-width: 100%;
+  background: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  font-size: medium;
+}
+.result-container.lost {
+  max-width: 100%;
+  background: #fe5001;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  font-size: medium;
+}
+.result-container.win {
+  max-width: 100%;
+  background: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  font-size: medium;
+}
+.result-container.lost {
+  max-width: 100%;
+  background: #fe5001;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  font-size: medium;
 }
