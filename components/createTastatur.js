@@ -75,6 +75,8 @@ export const createTastatur = () => {
           if (window.tryCount === imagesHangman.length - 1) {
             const myWord = window.word.split("");
             slots.forEach((card, i) => {
+              if (card.classList.contains("space-card")) return;
+
               if (!card.textContent || card.textContent === "_") {
                 card.textContent = myWord[i].toUpperCase();
                 card.classList.add("richtig");
