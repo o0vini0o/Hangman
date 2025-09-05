@@ -47,6 +47,10 @@ export const createTastatur = () => {
         // check if all slots filled, is win
         const win = [...slots].every((slot) => slot.textContent !== "");
         if (win) {
+
+  slots.forEach((card) => {
+              card.classList.add("gewinnen");
+            });
           document
             .querySelector(".hangman-container")
             .insertBefore(
@@ -58,6 +62,7 @@ export const createTastatur = () => {
           //   alert("Glückwunssch! Sie haben gewonnen! 🎉🎉🎉");
           //   disableAllKeys();
           // }, 100);
+
           window.tryCount = 0;
         }
       } else {
