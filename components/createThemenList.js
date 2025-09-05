@@ -3,6 +3,7 @@ import { themen } from "./themen.js";
 export const createThemenList = () => {
   /* Our questions are in arrays */
   /* for each type one array for easier handling */
+  // create an Array with themen name and display as buttons in nav
   const nav = document.querySelector("nav");
 
   const themeList = themen.map((thema) => thema.name);

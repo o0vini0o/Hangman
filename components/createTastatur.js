@@ -1,6 +1,6 @@
-import { imagesHangman } from "./components/imagesHangman.js";
-import { tastatur } from "./components/tastatur.js";
-import { createResult } from "./components/createResult.js";
+import { imagesHangman } from "./imagesHangman.js";
+import { tastatur } from "./tastatur.js";
+import { createResult } from "./createResult.js";
 export const createTastatur = () => {
   const myTastatur = document.getElementById("my-tastatur");
   const tastEl = document.createElement("article");
