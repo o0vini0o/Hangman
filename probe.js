@@ -73,8 +73,12 @@ export const createTastatur = () => {
           img.src = imagesHangman[window.tryCount];
           // check lost
           if (window.tryCount === imagesHangman.length - 1) {
-            slots.forEach((card) => {
-              card.classList.add("verloren");
+            const myWord = window.word.split("");
+            slots.forEach((card, i) => {
+              if (!card.textContent || card.textContent === "_") {
+                card.textContent = myWord[i].toUpperCase();
+                card.classList.add("richtig");
+              } else card.classList.add("verloren");
             });
             document
               .querySelector(".hangman-container")
