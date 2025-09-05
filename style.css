@@ -95,6 +95,10 @@ body {
   cursor: default;
 }
 
+.letter-card.gewinnen {
+  background-color: darkgreen;
+}
+
 #selected-theme {
   margin: 0 auto;
   text-align: center;
@@ -187,6 +191,10 @@ body {
 }
 
 @media screen and (max-width: 900px) {
+  .header h1 {
+    font-size: 1.6rem;
+  }
+
   .keyboard {
     padding: 1rem;
     gap: 0.5rem;
@@ -216,6 +224,10 @@ body {
   .key {
     font-size: 1.2rem;
   }
+
+  .container_question_button {
+    font-size: 0.9rem;
+  }
 }
 
 @media screen and (max-width: 520px) {
@@ -232,6 +244,10 @@ body {
 
   .container_question_buttons {
     justify-content: center;
+  }
+
+  .container_question_button {
+    font-size: 0.8rem;
   }
 }
 .result-container.win {
