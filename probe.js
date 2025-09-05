@@ -47,6 +47,9 @@ export const createTastatur = () => {
         const win = [...slots].every((slot) => slot.textContent !== "");
         if (win) {
           setTimeout(() => {
+            slots.forEach((card) => {
+              card.classList.add("gewinnen");
+            });
             alert("Glückwunssch! Sie haben gewonnen! 🎉🎉🎉");
             disableAllKeys();
           }, 100);
