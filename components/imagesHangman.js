@@ -6,4 +6,7 @@ export const imagesHangman = [
   "img/hangman-5.png",
   "img/hangman-6.png",
   "img/hangman-7.png",
+  "img/hangman-8.png",
+  "img/hangman-9.png",
+  "img/hangman-10.png",
 ];
