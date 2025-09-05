@@ -47,10 +47,9 @@ export const createTastatur = () => {
         // check if all slots filled, is win
         const win = [...slots].every((slot) => slot.textContent !== "");
         if (win) {
-
-  slots.forEach((card) => {
-              card.classList.add("gewinnen");
-            });
+          slots.forEach((card) => {
+            card.classList.add("gewinnen");
+          });
           document
             .querySelector(".hangman-container")
             .insertBefore(
@@ -74,6 +73,9 @@ export const createTastatur = () => {
           img.src = imagesHangman[window.tryCount];
           // check lost
           if (window.tryCount === imagesHangman.length - 1) {
+            slots.forEach((card) => {
+              card.classList.add("verloren");
+            });
             document
               .querySelector(".hangman-container")
               .insertBefore(

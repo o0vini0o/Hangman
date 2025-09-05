@@ -99,6 +99,11 @@ body {
   background-color: darkgreen;
 }
 
+.letter-card.verloren {
+  background-color: red;
+  opacity: 0.5;
+}
+
 #selected-theme {
   margin: 0 auto;
   text-align: center;
@@ -190,6 +195,27 @@ body {
   cursor: default;
 }
 
+.result-container.win {
+  max-width: 80%;
+  background: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem auto;
+  font-size: medium;
+  font-weight: bold;
+}
+.result-container.lost {
+  max-width: 80%;
+  background: red;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem auto;
+  font-size: medium;
+  font-weight: bold;
+}
+
 @media screen and (max-width: 900px) {
   .header h1 {
     font-size: 1.6rem;
@@ -249,40 +275,4 @@ body {
   .container_question_button {
     font-size: 0.8rem;
   }
-}
-.result-container.win {
-  max-width: 100%;
-  background: #4caf50;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin: 0.5rem 0;
-  font-size: medium;
-}
-.result-container.lost {
-  max-width: 100%;
-  background: #fe5001;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin: 0.5rem 0;
-  font-size: medium;
-}
-.result-container.win {
-  max-width: 100%;
-  background: #4caf50;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin: 0.5rem 0;
-  font-size: medium;
-}
-.result-container.lost {
-  max-width: 100%;
-  background: #fe5001;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin: 0.5rem 0;
-  font-size: medium;
 }
