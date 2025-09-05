@@ -45,6 +45,10 @@ export const createThemenList = () => {
 
       answerChars.forEach((letter) => {
         const charContainer = document.createElement("div");
+        if (letter === "-" || letter === " ") {
+          charContainer.textContent = letter;
+          charContainer.classList.add("space-card");
+        }
         charContainer.classList.add("letter-card");
         answerContainer.appendChild(charContainer);
       });

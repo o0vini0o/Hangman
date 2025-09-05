@@ -94,6 +94,21 @@ body {
   transition: background-color 0.3s, transform 0.2s;
   cursor: default;
 }
+.space-card {
+  width: 20px;
+  height: 55px;
+  display: flex;
+  background: #70cdd4;
+  border-bottom: none;
+  color: #333;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: default;
+}
 
 .letter-card.gewinnen {
   background-color: darkgreen;
