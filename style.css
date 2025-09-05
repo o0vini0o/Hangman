@@ -14,12 +14,12 @@ body {
 }
 
 .footer {
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: center;
   background-color: #222;
   color: aqua;
   font-weight: 800;
-  font-size: large;
+  font-size: small;
 }
 .header {
   background: #222;
@@ -27,15 +27,17 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 1rem;
+  gap: 1rem;
 }
 .header h1 {
-  padding: 4px;
-  margin: 4px;
+  margin: 0;
 }
 .container {
   flex: 1;
   background-color: #70cdd4;
+  padding: 1rem;
 }
 
 .spiel-container {
@@ -43,6 +45,7 @@ body {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   column-gap: 2rem;
+  margin-top: 1rem;
 }
 
 .hangman-img {
@@ -50,10 +53,13 @@ body {
 }
 
 .hangman-img img {
-  width: 25rem;
+  width: 100%;
+  max-width: 25rem;
+  height: auto;
 }
 .hangman-container {
   justify-self: start;
+  width: 100%;
 }
 
 /*.answer-container {
@@ -74,26 +80,49 @@ body {
 }
 
 .letter-card {
-  width: 50px;
-  height: 60px;
+  width: 40px;
+  height: 55px;
   border-bottom: 4px solid #f3d611;
   background-color: #222;
   display: flex;
   color: #fff;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: default;
+}
+.space-card {
+  width: 20px;
+  height: 55px;
+  display: flex;
+  background: #70cdd4;
+  border-bottom: none;
+  color: #333;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
   font-weight: bold;
   margin: 5px;
   transition: background-color 0.3s, transform 0.2s;
   cursor: default;
 }
 
+.letter-card.gewinnen {
+  background-color: darkgreen;
+}
+
+.letter-card.verloren {
+  background-color: red;
+  opacity: 0.5;
+}
+
 #selected-theme {
-  padding: 1rem;
   margin: 0 auto;
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #000;
   text-transform: uppercase;
@@ -102,11 +131,12 @@ body {
 
 .container_question_buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
 }
 
 .container_question_button {
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 1rem;
   background: #444;
   color: #fff;
   border-radius: 5px;
@@ -116,8 +146,8 @@ body {
 }
 
 .container_question_button:hover {
-  background: antiquewhite;
-  color: brown;
+  background: #f3d611;
+  color: #222;
   font-weight: bold;
   transition: all 0.3s ease;
 }
@@ -150,7 +180,7 @@ body {
   font-weight: bold;
   padding: 0.5rem;
   cursor: pointer;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: inherit;
   height: auto;
 }
 
@@ -179,8 +209,85 @@ body {
   opacity: 0.6;
   cursor: default;
 }
-@media screen and (max-width: 520px) {
+
+.result-container.win {
+  max-width: 80%;
+  background: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem auto;
+  font-size: medium;
+  font-weight: bold;
+}
+.result-container.lost {
+  max-width: 80%;
+  background: red;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem auto;
+  font-size: medium;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 900px) {
+  .header h1 {
+    font-size: 1.6rem;
+  }
+
   .keyboard {
     padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .container_question_buttons {
+    gap: 1rem;
+  }
+  .spiel-container {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    text-align: center;
+  }
+
+  .hangman-img {
+    justify-self: center;
+  }
+
+  .hangman-img img {
+    max-width: 10rem;
+  }
+
+  .hangman-container {
+    justify-self: center;
+  }
+
+  .key {
+    font-size: 1.2rem;
+  }
+
+  .container_question_button {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .letter-card {
+    width: 30px;
+    height: 45px;
+    font-size: 22px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .container_question_buttons {
+    justify-content: center;
+  }
+
+  .container_question_button {
+    font-size: 0.8rem;
   }
 }

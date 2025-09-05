@@ -19,15 +19,17 @@ export const createThemenList = () => {
         btn.classList.remove("active");
         btn.disabled = false;
       });
-
+      // keyboard init
       keys.forEach((keyBtn) => {
         keyBtn.classList = ["key"];
         keyBtn.disabled = false;
       });
+      // count and hangman init
       window.tryCount = 0;
-
       img.src = imagesHangman[window.tryCount];
-
+      // result container init
+      const resultContainer = document.querySelector(".result-container");
+      if (resultContainer) resultContainer.remove();
       themaBtn.classList.add("active");
       themaBtn.disabled = true;
 
@@ -43,6 +45,10 @@ export const createThemenList = () => {
 
       answerChars.forEach((letter) => {
         const charContainer = document.createElement("div");
+        if (letter === "-" || letter === " ") {
+          charContainer.textContent = letter;
+          charContainer.classList.add("space-card");
+        }
         charContainer.classList.add("letter-card");
         answerContainer.appendChild(charContainer);
       });
